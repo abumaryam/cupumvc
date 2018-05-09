@@ -1,1 +1,1 @@
-<h1>Ini adalah halaman utamd <?= $nama ?></h1>
+<h1>Ini adalah halaman utama <?= $nama ?></h1>
