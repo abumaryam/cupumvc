@@ -7,7 +7,7 @@ Hanya sekedar untuk memberikan contoh penerapan MVC pada php.
 
 ## Cara Menggunakan
 1. Silahkan rename file yang ada di main.sample.php menjadi main.php
-2. Untuk mengaksesnya silahkan coba akses http://hostnameanda/path/site/index maka ia akan masuk ke controller bernama site dan action bernama index
+2. Untuk mengaksesnya silahkan coba akses http://hostnameanda/path/index.php?r=site/index maka ia akan masuk ke controller bernama site dan action bernama index
 
 Untuk produksi saya menyarankan gunakan saja Yii2, CodeIgniter atau Laravel
 

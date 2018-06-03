@@ -1,25 +1,23 @@
-<?php 
+<?php
 
-
-spl_autoload_register(function($class) {
-    include str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
+spl_autoload_register(function ($class) {
+	include str_replace('\\', DIRECTORY_SEPARATOR, $class) . '.php';
 });
 
-$hasil  = parse_url($_SERVER['REQUEST_URI']);
+$urlnya = $_GET['r'];
 
-
-
-$x = explode('/', $hasil['path']);
-if ($x[1]==='cupumvc') {
-	$x = null;
-	$controller = 'site';
-} else {
-	$controller = $x[count($x)-2];
+if (empty($urlnya)) {
+	header("Location: error.php", true, 301);
+	exit();
 }
 
-$action = (isset($x)) ? 'action'.$x[count($x)-1] : 'actionIndex';
-$classname = (isset($controller)) ? '\controller\\'.ucfirst($controller).'Controller' : '\controller\SiteController';
+$x = explode('/', $urlnya);
 
+if (isset($x) && empty($x[0])) {
+	$controller = 'site';
+} else {
+	$controller = $x[0];
+}
 
-$run = new $classname();
-
+$action = (isset($x)) ? 'action' . $x[1] : 'actionIndex';
+$classname = (isset($controller)) ? '\controller\\' . ucfirst($controller) . 'Controller' : '\controller\SiteController';
