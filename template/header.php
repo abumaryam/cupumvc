@@ -10,14 +10,14 @@
     <title>Sisfo 2016! | </title>
 
     <!-- Bootstrap -->
-    <link href="../template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="template/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../template/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="template/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="../template/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="template/vendors/nprogress/nprogress.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="../template/build/css/custom.min.css" rel="stylesheet">
+    <link href="template/build/css/custom.min.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">
