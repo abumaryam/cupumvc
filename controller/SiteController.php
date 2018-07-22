@@ -37,17 +37,20 @@ class SiteController extends Controller
 
 	public function actionTambahmahasiswa()
 	{
-		if ($_POST) {
-			$mahasiswa = new Mahasiswa();
-			$mahasiswa->nama = $_POST['nama'];
-			$mahasiswa->nim = $_POST['nim'];
-			$mahasiswa->alamat = $_POST['alamat'];
-			$mahasiswa->tambahMahasiswa();
-			header("Location: index.php?r=site/mahasiswadetail&id=".$mahasiswa->id_mahasiswa);
-			die();
+		if (isset($_SESSION['status']) && $_SESSION['status']==='login') {
+			if ($_POST) {
+				$mahasiswa = new Mahasiswa();
+				$mahasiswa->nama = $_POST['nama'];
+				$mahasiswa->nim = $_POST['nim'];
+				$mahasiswa->alamat = $_POST['alamat'];
+				$mahasiswa->tambahMahasiswa();
+				header("Location: index.php?r=site/mahasiswadetail&id=".$mahasiswa->id_mahasiswa);
+				die();
+			}
+			View::render('tambahmhs');
+		} else {
+			echo "Maaf anda tidak diperkenankan melihat halaman ini";
 		}
-
-		View::render('tambahmhs');
 
 	}
 
